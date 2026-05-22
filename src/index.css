@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@layer base {
+  html, body, #root {
+    height: 100%;
+  }
+  body {
+    background-color: #0a0a0f;
+    color: #e4e4e7;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #0a0a0f; }
+::-webkit-scrollbar-thumb { background: #27272a; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+/* Row horizontal scroller */
+.row-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #27272a transparent;
+}
+.row-scroll::-webkit-scrollbar { height: 6px; }
+.row-scroll::-webkit-scrollbar-thumb { background: #27272a; border-radius: 8px; }
+
+/* Hero gradient */
+.hero-gradient {
+  background: linear-gradient(180deg, rgba(10,10,15,0) 0%, rgba(10,10,15,0.55) 55%, rgba(10,10,15,1) 100%),
+              linear-gradient(90deg, rgba(10,10,15,0.9) 0%, rgba(10,10,15,0.2) 55%, rgba(10,10,15,0) 100%);
+}
+
+/* Subtle shimmer for skeletons */
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, #18181b 0px, #27272a 200px, #18181b 400px);
+  background-size: 800px 100%;
+  animation: shimmer 1.3s linear infinite;
+}
+
+/* Fade in */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.35s ease-out both; }
+
+/* Neon accent glow */
+.glow {
+  box-shadow: 0 0 0 1px rgba(244, 63, 94, 0.35), 0 10px 40px -10px rgba(244, 63, 94, 0.45);
+}
